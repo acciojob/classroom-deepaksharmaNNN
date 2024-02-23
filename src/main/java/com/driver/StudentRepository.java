@@ -34,4 +34,11 @@ public class StudentRepository {
         return students;
     }
 
+    public void deleteTeacherByName(String name) {
+        teacherDb.remove(name);
+    }
+
+    public void deleteAllTeachers() {
+        teacherDb.clear();
+    }
 }
