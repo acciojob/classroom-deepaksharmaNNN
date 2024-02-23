@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Repository
 public class StudentRepository {
@@ -27,9 +28,10 @@ public class StudentRepository {
 
     public List<String> getAllStudents() {
         // get all students from studentDb
+        //return studentDb.values().stream().map(Student::getName).collect(Collectors.toList());
         List<String> students = new ArrayList<>();
-        for(Map.Entry<String, Student> entry : studentDb.entrySet()){
-            students.add(entry.getKey());
+        for (Student student : studentDb.values()) {
+            students.add(student.getName());
         }
         return students;
     }
