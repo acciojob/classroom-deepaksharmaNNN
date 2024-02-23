@@ -11,18 +11,18 @@ public class StudentService {
     private StudentRepository studentRepository;
 
     public void addStudent(Student student){
-        studentRepository.studentDb.put(student.getName(),student);
+        studentRepository.addStudent(student);
     }
 
 
     public void addTeacher(Teacher teacher) {
-        studentRepository.teacherDb.put(teacher.getName(),teacher);
+        studentRepository.addTeacher(teacher);
     }
     public Student getStudentByName(String name){
-        return studentRepository.studentDb.get(name);
+        return studentRepository.getStudentByName(name);
     }
     public Teacher getTeacherByName(String name){
-        return studentRepository.teacherDb.get(name);
+        return studentRepository.getTeacherByName(name);
     }
     public List<String> getAllStudents(){
         return studentRepository.getAllStudents();

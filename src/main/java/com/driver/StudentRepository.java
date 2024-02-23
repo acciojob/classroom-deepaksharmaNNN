@@ -12,6 +12,19 @@ public class StudentRepository {
     Map<String,Student> studentDb = new HashMap<>();
     Map<String,Teacher> teacherDb = new HashMap<>();
 
+    public void addStudent(Student student){
+        studentDb.put(student.getName(),student);
+    }
+    public void addTeacher(Teacher teacher){
+        teacherDb.put(teacher.getName(),teacher);
+    }
+    public Student getStudentByName(String name){
+        return studentDb.get(name);
+    }
+    public Teacher getTeacherByName(String name){
+        return teacherDb.get(name);
+    }
+
     public List<String> getAllStudents() {
         // get all students from studentDb
         List<String> students = new ArrayList<>();
@@ -20,4 +33,5 @@ public class StudentRepository {
         }
         return students;
     }
+
 }
