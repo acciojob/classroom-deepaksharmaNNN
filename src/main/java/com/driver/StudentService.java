@@ -17,12 +17,17 @@ public class StudentService {
         studentRepository.addTeacher(teacher);
     }
 
-
+    public void addStudentTeacherPair(String student, String teacher){
+        studentRepository.addStudentTeacherPair(student, teacher);
+    }
     public Student getStudentByName(String name){
         return studentRepository.getStudentByName(name);
     }
     public Teacher getTeacherByName(String name){
         return studentRepository.getTeacherByName(name);
+    }
+    public List<String> getStudentsByTeacherName(String teacher){
+        return studentRepository.getStudentsByTeacherName(teacher);
     }
     public List<String> getAllStudents(){
         return studentRepository.getAllStudents();
